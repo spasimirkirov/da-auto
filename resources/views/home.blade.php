@@ -1,7 +1,7 @@
 <x-layouts.app>
-    <x-slot:pageTitle>Welcome</x-slot>
+    <x-slot:pageTitle>Home</x-slot>
 
-    <x-slot:pageHeroSection>
+    <x-slot:heroSectionItems>
         <div class="container">
             <div class="hero-section-txt">
                 <h2>get your desired car in resonable price</h2>
@@ -13,7 +13,7 @@
                 <button class="welcome-btn" onclick="window.location.href='#contactUs'">contact us</button>
             </div>
         </div>
-    </x-slot:pageHeroSection>
+    </x-slot:heroSectionItems>
 
     <!--service start -->
     <section id="service" class="service">
