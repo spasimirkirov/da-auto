@@ -1,3 +1,98 @@
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+@keyframes fadeInY {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInX {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-y {
+    animation: fadeInY 0.6s ease-in-out;
+}
+
+.fade-in-x {
+    animation: fadeInX 0.6s ease-in-out;
+}
+
 .carousel-image {
     max-height: 20rem;
+}
+
+.hero-section {
+    background-image: url("/vendor/pixabay/car-1890494_1920.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full-screen height */
+}
+
+.hero-section-card {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.25
+    ); /* Optional: Adds a dark overlay */
+}
+
+
+.section-header {
+    position: relative;
+    text-align: center;
+}
+
+.section-header h2 {
+    position: relative;
+    font-size: 36px;
+    font-weight: 500;
+    padding-bottom: 35px;
+}
+
+.section-header h2:before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -42px;
+    background: #4e4ffa;
+}
+
+.section-header p {
+    color: #444a57;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.section-header h2 span,
+.section-header p span {
+    text-transform: lowercase;
+}
+
+footer, footer a {
+    transition: color 0.3s ease;
+    color: #4e4e4e;
+}
+footer a:hover {
+    color: #fafafa;
 }

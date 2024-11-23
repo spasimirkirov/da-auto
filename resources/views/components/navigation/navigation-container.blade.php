@@ -3,7 +3,6 @@
      <div class="container">
          <!-- Brand Logo -->
          <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-             <img src="https://via.placeholder.com/50" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
              {{ config('app.name') }}
          </a>
 
@@ -14,8 +13,8 @@
          </button>
 
          <!-- Navigation Items -->
-         <div class="collapse navbar-collapse" id="navbarNav">
-             <ul class="navbar-nav ms-end">
+         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+             <ul class="navbar-nav">
                  {{ $slot }}
              </ul>
          </div>
