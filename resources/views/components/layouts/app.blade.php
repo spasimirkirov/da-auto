@@ -18,14 +18,8 @@
     <!-- For favicon png -->
     <link rel="shortcut icon" type="image/icon" href="/vendor/carvilla-v1.0/assets/logo/favicon.png" />
 
-    <!--font-awesome.min.css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/font-awesome.min.css">
-
-    <!--linear icon css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/linearicons.css">
-
-    <!--flaticon.css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/flaticon.css">
+    <!--style.css-->
+    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/style.css">
 
     <!--animate.css-->
     <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/animate.css">
@@ -33,18 +27,6 @@
     <!--owl.carousel.css-->
     <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/owl.theme.default.min.css">
-
-    <!--bootstrap.min.css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/bootstrap.min.css">
-
-    <!-- bootsnav -->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/bootsnav.css">
-
-    <!--style.css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/style.css">
-
-    <!--responsive.css-->
-    <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/responsive.css">
     <title>{{ config('app.name') }} - {{ $pageTitle }}</title>
 </head>
 
@@ -59,7 +41,7 @@
         <div class="top-area">
             <div class="header-area">
                 <x-navigation.navigation-container>
-                    <x-navigation.navigation-item href="/home" title="Home" :isActive="Request::is('/')">
+                    <x-navigation.navigation-item href="/" title="Home" :isActive="Request::is('/')">
                         Home
                     </x-navigation.navigation-item>
                     {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('/featured-cars')">
