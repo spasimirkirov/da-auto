@@ -1,12 +1,16 @@
 <div @class(['carousel-item', 'active' => $idx === 0])>
-    <div class="d-block w-100">
-        <img src="{{ $carImagePath ?? '' }}" alt="newest car" />
+    <div class="d-flex flex-column">
+        <div class="d-flex flex-justify-content-center">
+            <img src="{{ $carImagePath ?? '' }}" class="carousel-image" alt="newest car" />
+        </div>
 
-        <h2><a href="{{ $href }}">{{ $carName }}</a></h2>
+        <h2><a href="{{ $href }}" class="text-light">{{ $carName }}</a></h2>
         <p>{{ $slot }} </p>
 
-        <button class="welcome-btn new-cars-btn" onclick="window.location.href='{{ $href }}'">
-            View Details
-        </button>
+        <div class="d-block">
+            <button class="btn btn-primary" onclick="window.location.href='{{ $href }}'">
+                View Details
+            </button>
+        </div>
     </div>
 </div>

@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/vendor/carvilla-v1.0/assets/css/owl.theme.default.min.css">
     <title>{{ config('app.name') }} - {{ $pageTitle }}</title>
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -50,7 +52,7 @@
     </navigation>
 
     <!--hero-section start -->
-    <section id="hero-section" class="hero-section mb-5">
+    <section id="hero-section" class="hero-section">
         @if ($heroSectionItems ?? false)
             {{ $heroSectionItems }}
         @endif
@@ -61,7 +63,4 @@
     @include('partials.scripts')
     @include('partials.footer')
 </body>
-
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
 </html>

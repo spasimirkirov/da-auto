@@ -10,12 +10,12 @@
                     labore
                     et dolore magna aliqua.
                 </p>
-                <button class="welcome-btn" onclick="window.location.href='/contact-us'">contact us</button>
+                <button class="welcome-btn" onclick="window.location.href='/contact-us'">Contact Us</button>
             </div>
         </div>
     </x-slot:heroSectionItems>
 
-    <div id="our-services" class="mb-5">
+    <div id="our-services" class="py-2 py-lg-5">
         <x-sections.our-services.section-container>
             <x-sections.our-services.section-item title="Largest Dealership of Car">
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.
@@ -31,8 +31,8 @@
         </x-sections.our-services.section-container>
     </div>
 
-    <div id="new-cars" class="mb-5">
-        <x-sections.new-cars.section-container itemsCount={{ array_count($newCars) }}>
+    <div id="new-cars" class="bg-dark py-2 py-lg-5">
+        <x-sections.new-cars.section-container :itemsCount="count($newCars)">
             @foreach ($newCars as $i => $newCar)
                 <x-sections.new-cars.section-item :idx="$i" href="{{ '/car/' . $newCar['id'] }}"
                     :carName="$newCar['name']" :carModel="$newCar['model']" :carImagePath="$newCar['image_path']">
@@ -42,7 +42,7 @@
         </x-sections.new-cars.section-container>
     </div>
 
-    <div id="featured-cars" class="bg-light mt-5">
+    <div id="featured-cars" class="py-2 py-lg-5">
         <x-sections.featured-cars.section-container>
             @foreach ($featuredCars as $featuredCar)
                 <x-sections.featured-cars.section-item href="{{ '/car/' . $newCar['id'] }}" :carName="$featuredCar['name']"

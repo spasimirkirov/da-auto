@@ -1,12 +1,12 @@
 <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @for ($i = 0; $i >= $itemsCount; $i++)
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" class="active"></li>
-            @endfor
-        </ol>
-        <div class="carousel-inner">
-            {{ $slot }}
+    <div class="section-header">
+        <h2 class="text-light">New Cars</h2>
+    </div>
+    <div class="d-flex justify-content-center py-5">
+        <div id="newCarsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 </div>
