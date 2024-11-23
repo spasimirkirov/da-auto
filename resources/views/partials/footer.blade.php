@@ -1,12 +1,12 @@
 <!--contact start-->
-<footer id="contact" class="contact">
+<footer id="footer" class="footer">
     <div class="container">
         <div class="footer-top">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col">
                     <div class="single-footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html">{{ config('app.name') }}</a>
+                            <a href="/">{{ config('app.name') }}</a>
                         </div>
                         <p>
                             Ased do eiusm tempor incidi ut labore et dolore magnaian aliqua. Ut enim ad minim
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6">
+                <div class="col">
                     <div class="single-footer-widget">
                         <h2>about devloon</h2>
                         <ul>
@@ -29,7 +29,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-xs-12">
+                <div class="col">
                     <div class="single-footer-widget">
                         <h2>top brands</h2>
                         <div class="row">
@@ -54,24 +54,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-offset-1 col-md-3 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h2>news letter</h2>
-                        <div class="footer-newsletter">
-                            <p>
-                                Subscribe to get latest news update and informations
-                            </p>
-                        </div>
-                        <div class="hm-foot-email">
-                            <div class="foot-email-box">
-                                <input type="text" class="form-control" placeholder="Add Email">
-                            </div><!--/.foot-email-box-->
-                            <div class="foot-email-subscribe">
-                                <span><i class="fa fa-arrow-right"></i></span>
-                            </div><!--/.foot-email-icon-->
-                        </div><!--/.hm-foot-email-->
                     </div>
                 </div>
             </div>

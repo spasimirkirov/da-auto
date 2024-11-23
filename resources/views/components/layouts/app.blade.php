@@ -35,29 +35,26 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
+    <navigation>
+        <x-navigation.navigation-container>
+            <x-navigation.navigation-item href="/" title="Home" :isActive="Request::is('/')">
+                Home
+            </x-navigation.navigation-item>
+            {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('/featured-cars')">
+                Featured Cars
+            </x-navigation.navigation-item> --}}
+            <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('/contact-us')">
+                Contact Us
+            </x-navigation.navigation-item>
+        </x-navigation.navigation-container>
+    </navigation>
+
     <!--hero-section start -->
-    <section id="home" class="hero-section">
-        <!-- top-area Start -->
-        <div class="top-area">
-            <div class="header-area">
-                <x-navigation.navigation-container>
-                    <x-navigation.navigation-item href="/" title="Home" :isActive="Request::is('/')">
-                        Home
-                    </x-navigation.navigation-item>
-                    {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('/featured-cars')">
-                        Featured Cars
-                    </x-navigation.navigation-item> --}}
-                    <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('/contact-us')">
-                        Contact Us
-                    </x-navigation.navigation-item>
-                </x-navigation.navigation-container>
-            </div><!--/.header-area-->
-            <div class="clearfix"></div>
-        </div>
-        <!-- top-area End -->
-        {{ $heroSectionItems }}
+    <section id="hero-section" class="hero-section mb-5">
+        @if ($heroSectionItems ?? false)
+            {{ $heroSectionItems }}
+        @endif
     </section>
-    <!--hero-section end -->
 
     {{ $slot }}
 

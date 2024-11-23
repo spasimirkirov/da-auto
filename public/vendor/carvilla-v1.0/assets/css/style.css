@@ -244,84 +244,6 @@ body {
 /*.hero-section-txt*/
 
 /*-------------------------------------
-        4. Model-Search
---------------------------------------*/
-.model-search-content .col-sm-12 {
-    padding: 0;
-}
-
-.model-search-content {
-    padding: 40px 0;
-    background: #fff;
-    box-shadow: 0 10px 40px 0px rgba(38, 40, 64, .2);
-    position: absolute;
-    bottom: -150px;
-    width: 100%;
-    border-radius: 3px;
-}
-
-/*.single-model-search*/
-.single-model-search {
-    margin-bottom: 30px;
-}
-
-.single-model-search:last-child {
-    margin-bottom: 0;
-}
-
-.single-model-search h2 {
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-}
-
-/*model-select-icon*/
-.model-select-icon {
-    position: relative;
-}
-
-.model-select-icon .form-control {
-    outline: 0 !important;
-    box-shadow: none;
-    border: 1px solid #f8f8f8;
-    background: #f8f8f8;
-    height: 60px;
-}
-
-.model-select-icon select {
-    font-size: 16px;
-    color: #888f9d;
-    text-transform: capitalize;
-}
-
-.model-select-icon:after {
-    position: absolute;
-    content: "\f103";
-    right: 0px;
-    top: 0;
-    font-size: 10px;
-    color: #888f9d;
-    background: #f8f8f8;
-    height: 60px;
-    line-height: 60px;
-    width: 50px;
-    text-align: center;
-    font-family: "Flaticon";
-    pointer-events: none;
-    border: transparent;
-}
-
-/*model-select-icon*/
-.welcome-btn.model-search-btn {
-    width: 160px;
-    margin-top: 80px;
-    margin-left: 53px;
-}
-
-/*.single-model-search*/
-
-/*-------------------------------------
         5. Service
 --------------------------------------*/
 .service {
@@ -477,15 +399,6 @@ body {
 /*.single-featured-cars*/
 .featured-img-box {
     border: 1px solid #dadfe9;
-}
-
-.featured-cars-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30px;
-    height: 220px;
-    border-bottom: 1px solid #dadfe9;
 }
 
 .featured-model-info {
@@ -648,13 +561,9 @@ body {
 }
 
 /*-------------------------------------
-        10. Blog
+        12. Footer
 --------------------------------------*/
-
-/*-------------------------------------
-        12. Contact
---------------------------------------*/
-.contact {
+.footer {
     background: #2a2d54;
 }
 

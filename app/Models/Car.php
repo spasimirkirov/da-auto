@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
-class FeaturedCar extends Car
+use Illuminate\Database\Eloquent\Model;
+
+class Car extends Model
 {
     const FEATURED_CARS_DUMMY_DATA = [
         [
-            'id' => 1,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',
@@ -15,7 +16,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 2,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Manual',
@@ -24,7 +24,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 3,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',
@@ -33,7 +32,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 4,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',
@@ -42,7 +40,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 5,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',
@@ -51,7 +48,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 6,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',
@@ -60,7 +56,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 6,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Manual',
@@ -69,7 +64,6 @@ class FeaturedCar extends Car
             'description' => 'Lorem ipsum odor amet, consectetuer adipiscing elit. Hac vulputate adipiscing porttitor cursus et sapien',
         ],
         [
-            'id' => 7,
             'name' => 'Lorem ipsum odor amet',
             'model' => 'Lorem ipsum odor amet',
             'transmission_type' => 'Automatic',

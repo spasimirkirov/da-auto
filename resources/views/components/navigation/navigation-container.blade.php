@@ -1,5 +1,5 @@
  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
      <div class="container">
          <!-- Brand Logo -->
          <a class="navbar-brand d-flex align-items-center gap-2" href="/">
