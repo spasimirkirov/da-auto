@@ -18,7 +18,5 @@ class UserSeeder extends Seeder
             'email' => 'test@abv.bg',
             'password' => Hash::make('123456'),
         ]);
-
-        User::factory(50)->create();
     }
 }

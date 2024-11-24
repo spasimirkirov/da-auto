@@ -37,7 +37,7 @@
                         <td>{{ $car->created_at }}</td>
                     </tr>
                 @empty
-                    <td colspan="5" class="text-center">No Results</td>
+                    <td colspan="10" class="text-center">No Results</td>
                 @endforelse
             </tbody>
         </table>
