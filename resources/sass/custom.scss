@@ -47,13 +47,18 @@ a:focus {
 
 .hero-section-card {
     background-color: rgba(
-        255,
-        255,
-        255,
-        0.25
+        82,
+        82,
+        82,
+        0.664
     ); /* Optional: Adds a dark overlay */
 }
-
+.hero-section-card h1,
+.hero-section-card small,
+.hero-section-card p,
+.hero-section-card span {
+    color: #ffffff;
+}
 
 .section-header {
     position: relative;
@@ -89,9 +94,15 @@ a:focus {
     text-transform: lowercase;
 }
 
-footer, footer a {
+footer span,
+footer p {
     transition: color 0.3s ease;
-    color: #4e4e4e;
+    color: #686868;
+}
+
+footer a {
+    transition: color 0.3s ease;
+    color: #a7a7a7;
 }
 footer a:hover {
     color: #fafafa;

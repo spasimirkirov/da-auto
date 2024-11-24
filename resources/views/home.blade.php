@@ -5,11 +5,12 @@
         <div class="card hero-section-card p-5">
             <div class="d-flex flex-column gap-2">
                 <h1 class="text-center">Get your desired car in resonable price</h1>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text-center fs-6 fw-bold">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
             </div>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary" onclick="window.location.href='/contact-us'">Contact Us</button>
+                <button class="btn btn-primary fw-bold" onclick="window.location.href='/contact-us'">Contact Us</button>
             </div>
         </div>
     </x-slot:heroSection>

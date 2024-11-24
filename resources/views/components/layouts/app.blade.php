@@ -25,10 +25,10 @@
             <x-navigation.navigation-item href="/" title="Home" :isActive="Request::is('/')">
                 Home
             </x-navigation.navigation-item>
-            {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('/featured-cars')">
+            {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('featured-cars')">
                 Featured Cars
             </x-navigation.navigation-item> --}}
-            <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('/contact-us')">
+            <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('contact-us')">
                 Contact Us
             </x-navigation.navigation-item>
         </x-navigation.navigation-container>
@@ -54,38 +54,48 @@
                 <div class="row row-cols-3">
                     <div class="single-footer-widget">
                         <div class="footer-logo">
-                            <a href="/" class="text-white"><h6>{{ config('app.name') }}</h6></a>
+                            <a href="/" class="text-white">
+                                <h6>{{ config('app.name') }}</h6>
+                            </a>
                         </div>
                         <p>Ased do eiusm tempor incidi ut labore et dolore magnaian aliqua. Ut enim ad minim veniam.</p>
                         <div class="footer-contact d-flex flex-column">
-                            <span>Email: {{ env('CONTACTS_EMAIL') }}</span>
-                            <span>Phone: {{ env('CONTACTS_PHONE') }}</span>
+                            <span class="fw-bold">Email:
+                                <a href="mailto:{{ env('CONTACTS_EMAIL') }}" rel="noreferrer">
+                                    {{ env('CONTACTS_EMAIL') }}
+                                </a>
+                            </span>
+                            <span class="fw-bold">Phone:
+                                <a href="tel:{{ env('CONTACTS_PHONE') }}" rel="noreferrer">
+                                    {{ env('CONTACTS_PHONE') }}
+                                </a>
+                            </span>
                         </div>
                     </div>
                     <div class="text-light">
                         <h6>Navigation</h6>
-                        <ul class="list-unstyled text-light">
-                            <li><a href="./">Home</a></li>
+                        <ul class="list-unstyled">
+                            <li><a href="./" class="fw-bold">Home</a></li>
                             {{-- <li><a href="./featured-cars">Featured Cars</a></li> --}}
-                            <li><a href="./contact-us">Contact Us</a></li>
+                            <li><a href="./contact-us" class="fw-bold">Contact Us</a></li>
                         </ul>
+                    </div>
+                    <div class="text-light">
+                        <h6>Social</h6>
+                        <div class="d-flex gap-3">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="footer-copyright">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <p> Developed by <a href="https://www.linkedin.com/in/spasimirkirov" target="_blank">Spasimir Kirov</a>.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                        </div>
+                    <div class="col-12">
+                        <p> Developed by <a href="https://www.linkedin.com/in/spasimirkirov" target="_blank"
+                                rel="noreferrer">Spasimir Kirov</a>.</p>
                     </div>
                 </div>
             </div>
