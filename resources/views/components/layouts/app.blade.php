@@ -72,21 +72,21 @@
                             </span>
                         </div>
                     </div>
-                    <div class="text-light">
-                        <h6>Navigation</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="./" class="fw-bold">Home</a></li>
-                            {{-- <li><a href="./featured-cars">Featured Cars</a></li> --}}
-                            <li><a href="./contact-us" class="fw-bold">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="text-light">
+                    <div>
                         <h6>Social</h6>
                         <div class="d-flex gap-3">
                             <a href="#"><i class="fa-brands fa-facebook"></i></a>
                             <a href="#"><i class="fa-brands fa-instagram"></i></a>
                             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
+                    </div>
+                    <div>
+                        <h6>Navigation</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="./" class="fw-bold">Home</a></li>
+                            {{-- <li><a href="./featured-cars">Featured Cars</a></li> --}}
+                            <li><a href="./contact-us" class="fw-bold">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

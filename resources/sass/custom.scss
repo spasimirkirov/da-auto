@@ -100,10 +100,15 @@ footer p {
     color: #686868;
 }
 
+footer h6 {
+    transition: color 0.3s ease;
+    color: #c7c7c7;
+}
+
 footer a {
     transition: color 0.3s ease;
     color: #a7a7a7;
 }
 footer a:hover {
-    color: #fafafa;
+    color: #c7c7c7;
 }

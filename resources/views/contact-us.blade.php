@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <x-slot:pageTitle>Contact US</x-slot>
+    <x-slot:pageTitle>Contact Us</x-slot>
 
     <x-slot:heroSection>
         <div class="card hero-section-card p-5">
