@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         UserService::storeUser($request->validated());
 
-        return redirect(route('dashboard'));
+        return redirect(route('users.index'));
     }
 
     public function edit(Request $request, int $id)

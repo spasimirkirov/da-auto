@@ -29,6 +29,7 @@
                 @endforelse
             </tbody>
         </table>
-        {{ $users->links() }}
+
+        {{ $users->links('admin.pagination.bootstrap-5') }}
     </div>
 </x-app-layout>

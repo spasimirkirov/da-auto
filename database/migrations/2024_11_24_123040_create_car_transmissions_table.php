@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car_transmissions', function (Blueprint $table) {
+        Schema::create('car_transmission_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
@@ -31,7 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_transmissions');
+        Schema::dropIfExists('car_transmission_types');
     }
 
     /**
@@ -47,6 +47,6 @@ return new class extends Migration
             ['name' => 'Semi-Automatic', 'slug' => 'semi-automatic'],
         ];
 
-        DB::table('car_transmissions')->insert($transmissions);
+        DB::table('car_transmission_types')->insert($transmissions);
     }
 };

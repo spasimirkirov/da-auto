@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car_engines', function (Blueprint $table) {
+        Schema::create('car_engine_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
@@ -31,7 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_engines');
+        Schema::dropIfExists('car_engine_types');
     }
 
     /**
@@ -49,6 +49,6 @@ return new class extends Migration
             ['name' => 'Plug-in Hybrid', 'slug' => 'plug-in-hybrid'],
         ];
 
-        DB::table('car_engines')->insert($engines);
+        DB::table('car_engine_types')->insert($engines);
     }
 };

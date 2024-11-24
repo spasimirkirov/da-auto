@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Car\CarStoreRequest;
+use App\Models\CarBrand;
+use App\Models\CarColor;
+use App\Models\CarEngineType;
+use App\Models\CarTransmission;
+use App\Models\CarTransmissionType;
 use App\Services\CarService;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
@@ -18,12 +24,22 @@ class CarController extends Controller
 
     public function create(Request $request)
     {
-        return 1;
+        return view(
+            'admin.cars.create',
+            [
+                'carBrandIdNameMap' => CarBrand::pluck('name', 'id'),
+                'carColorIdNameMap' => CarColor::pluck('name', 'id'),
+                'carTransmissionIdNameMap' => CarTransmissionType::pluck('name', 'id'),
+                'carEngineIdNameMap' => CarEngineType::pluck('name', 'id'),
+            ]
+        );
     }
 
-    public function store(FormRequest $request)
+    public function store(CarStoreRequest $request)
     {
-        return 1;
+        CarService::storeCar($request->validated());
+
+        return redirect(route('cars.index'));
     }
 
     public function edit(Request $request)

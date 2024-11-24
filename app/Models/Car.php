@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $price
  * @property integer $car_brand_id
  * @property integer $car_color_id
- * @property integer $car_transmissions_id
- * @property integer $car_engine_id
+ * @property integer $car_transmission_type_id
+ * @property integer $car_engine_type_id
  * @property \Illuminate\Support\Carbon $year
  * @property integer $mileage
  * @property string $description
@@ -36,8 +36,8 @@ class Car extends Model
         'price',
         'car_brand_id',
         'car_color_id',
-        'car_transmissions_id',
-        'car_engine_id',
+        'car_transmission_type_id',
+        'car_engine_type_id',
         'year',
         'mileage',
         'description',

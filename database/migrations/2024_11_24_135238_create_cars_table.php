@@ -17,8 +17,8 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->unsignedBigInteger('car_brand_id')->index();
             $table->unsignedBigInteger('car_color_id')->index();
-            $table->unsignedBigInteger('car_transmissions_id')->index();
-            $table->unsignedBigInteger('car_engine_id');
+            $table->unsignedBigInteger('car_transmission_type_id')->index();
+            $table->unsignedBigInteger('car_engine_type_id');
             $table->year('year');
             $table->integer('mileage')->nullable();
             $table->text('description')->nullable();
@@ -28,6 +28,9 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreign('car_brand_id')->references('id')->on('car_brands')->onDelete('cascade');
+            $table->foreign('car_color_id')->references('id')->on('car_colors')->onDelete('cascade');
+            $table->foreign('car_transmission_type_id')->references('id')->on('car_transmission_types')->onDelete('cascade');
+            $table->foreign('car_engine_type_id')->references('id')->on('car_engine_types')->onDelete('cascade');
         });
     }
 

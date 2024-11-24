@@ -23,7 +23,7 @@
     <main>
         <div class="container py-2 py-lg-4">
             @if ($action ?? false)
-                <form action="/admin/users" method="{{ $method }}">
+                <form action="{{ $action }}" method="{{ $method }}">
                     <x-admin.input-error />
             @endif
             <!-- Page Heading -->
