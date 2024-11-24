@@ -4,8 +4,47 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property integer $id
+ * @property string $name
+ * @property float $price
+ * @property integer $car_brand_id
+ * @property integer $car_color_id
+ * @property integer $car_transmissions_id
+ * @property integer $car_engine_id
+ * @property \Illuminate\Support\Carbon $year
+ * @property integer $mileage
+ * @property string $description
+ * @property boolean $is_featured
+ * @property boolean $is_visible
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property \Illuminate\Support\Carbon $deleted_at
+ */
+
 class Car extends Model
 {
+    protected $table = 'cars';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'price',
+        'car_brand_id',
+        'car_color_id',
+        'car_transmissions_id',
+        'car_engine_id',
+        'year',
+        'mileage',
+        'description',
+        'is_featured',
+        'is_visible',
+    ];
+
     const FEATURED_CARS_DUMMY_DATA = [
         [
             'name' => 'Lorem ipsum odor amet',

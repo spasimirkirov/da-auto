@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\CarService;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,9 @@ class CarController extends Controller
 {
     public function index(Request $request)
     {
-        return 1;
+        return view('admin.cars.index', [
+            'cars' => CarService::getCarPagination(),
+        ]);
     }
 
     public function create(Request $request)

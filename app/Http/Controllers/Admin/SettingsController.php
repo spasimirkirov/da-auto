@@ -18,7 +18,7 @@ class SettingsController extends Controller
         return 1;
     }
 
-    public function store(FormRequest $request)
+    public function store(Request $request)
     {
         return 1;
     }

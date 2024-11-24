@@ -2,4 +2,4 @@
 
 namespace App\Http\Requests;
 
-class ContactUsIndexRequest extends InternalFormRequest {}
+class ContactUsIndexRequest extends InternalGetRequest {}

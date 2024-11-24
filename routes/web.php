@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\FeaturedCarsController;
@@ -20,16 +22,16 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::put('/users', [UserController::class, 'update'])->name('users.update');
 
     // Cars
-    Route::get('/cars', [UserController::class, 'index'])->name('cars.index');
-    Route::get('/cars/create', [UserController::class, 'create'])->name('cars.create');
-    Route::post('/cars', [UserController::class, 'store'])->name('cars.store');
-    Route::get('/cars/edit', [UserController::class, 'create'])->name('cars.edit');
-    Route::put('/cars', [UserController::class, 'update'])->name('cars.update');
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+    Route::get('/cars/edit', [CarController::class, 'create'])->name('cars.edit');
+    Route::put('/cars', [CarController::class, 'update'])->name('cars.update');
 
     // Settings
-    Route::get('/settings', [UserController::class, 'index'])->name('settings.index');
-    Route::get('/settings/edit', [UserController::class, 'create'])->name('settings.edit');
-    Route::put('/settings', [UserController::class, 'update'])->name('settings.update');
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::get('/settings/edit', [SettingsController::class, 'create'])->name('settings.edit');
+    Route::put('/settings', [SettingsController::class, 'update'])->name('settings.update');
 });
 
 Route::middleware('auth')->group(function () {

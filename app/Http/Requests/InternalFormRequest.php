@@ -2,6 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class InternalFormRequest extends Request {}
+class InternalFormRequest extends FormRequest {}
