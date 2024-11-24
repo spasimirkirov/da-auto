@@ -2,6 +2,12 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class InternalGetRequest extends Request {}
+class InternalGetRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return true;
+    }
+}
