@@ -35,7 +35,7 @@
             <!-- Page Content -->
 
             <div class="container card">
-                <div class="pt-2 pt-md-4 w-md-50">
+                <div class="py-2 py-md-4 w-md-50">
                     {{ $slot }}
                 </div>
             </div>
