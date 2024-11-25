@@ -21,11 +21,11 @@
             {{ html()->select('car_brand_id', $carBrandIdNameMap)->class('form-select')->placeholder('Choose') }}
         </div>
         <div class="mb-3">
-            <label class="form-label" for="car_color_id">Car Brand</label>
+            <label class="form-label" for="car_color_id">Car Color</label>
             {{ html()->select('car_color_id', $carColorIdNameMap, old('car_color_id'))->class('form-select')->placeholder('Choose') }}
         </div>
         <div class="mb-3">
-            <label class="form-label" for="car_transmission_type_id">Car Brand</label>
+            <label class="form-label" for="car_transmission_type_id">Car Transmission Type</label>
             {{ html()->select('car_transmission_type_id', $carTransmissionIdNameMap, old('car_transmission_type_id'))->class('form-select')->placeholder('Choose') }}
         </div>
         <div class="mb-3">
