@@ -1,6 +1,6 @@
-<x-app-layout action="/admin/users" method="POST">
+<x-app-layout action="/admin/users/{{ $user->id }}/password" method="POST">
     <x-slot:header>
-        <h4 class="fs-4 fw-bold">Create User</h4>
+        <h4 class="fs-4 fw-bold">Update User's password - {{ $user->email }}</h4>
         <div class="d-flex justify-content-end gap-2">
             <a class="btn btn-danger" href="/admin/users">Cancel</a>
             <button class="btn btn-success" type="submit">Save</button>
@@ -9,14 +9,7 @@
 
     <div class="container card">
         <div class="form-group pt-2 pt-md-4 w-50 mx-auto">
-            <div class="mb-3">
-                <label class="form-label" for="name">Name</label>
-                {{ html()->input('text', 'name')->class('form-control')->placeholder('Enter user\'s name') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="email">Email address</label>
-                {{ html()->input('email', 'email')->class('form-control')->placeholder('Enter user\'s email') }}
-            </div>
+            @method('PUT')
             <div class="mb-3">
                 <label class="form-label" for="password">Password</label>
                 {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}

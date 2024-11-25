@@ -18,15 +18,23 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
-    Route::get('/users/edit', [UserController::class, 'create'])->name('users.edit');
-    Route::put('/users', [UserController::class, 'update'])->name('users.update');
+    Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{id}', [UserController::class, 'delete'])->name('users.delete');
+
+    // Update User's password
+    Route::get('/users/{id}/password', [UserController::class, 'editPassword'])->name('users.editPassword');
+    Route::put('/users/{id}/password', [UserController::class, 'updatePassword'])->name('users.updatePassword');
 
     // Cars
     Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
     Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
     Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
-    Route::get('/cars/edit', [CarController::class, 'create'])->name('cars.edit');
-    Route::put('/cars', [CarController::class, 'update'])->name('cars.update');
+    Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
+    Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
+    Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
+    Route::delete('/cars/{id}', [CarController::class, 'delete'])->name('cars.delete');
 
     // Settings
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');

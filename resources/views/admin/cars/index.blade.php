@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot:header>
-        <h4 class="fs-4 fw-bold"> {{ __('Cars') }}</h4>
+        <h4 class="fs-4 fw-bold">Cars List</h4>
         <div class="d-flex justify-content-end">
             <a href="/admin/cars/create" class="btn btn-primary">Create</a>
         </div>
@@ -25,8 +25,8 @@
             <tbody>
                 @forelse ($cars as $car)
                     <tr>
-                        <th scope="row">{{ $car->id }}</th>
-                        <td>{{ $car->name }}</td>
+                        <td>{{ $car->id }}</td>
+                        <td><a href="/admin/cars/{{ $car->id}}" class="link-item">{{ $car->name }}</td>
                         <td>{{ $car->car_brand_name }}</td>
                         <td>{{ $car->car_color_name }}</td>
                         <td>{{ $car->car_transmission_type_name }}</td>

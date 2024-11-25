@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot:header>
-        <h4 class="fs-4 fw-bold"> {{ __('Users') }}</h4>
+        <h4 class="fs-4 fw-bold">Users List</h4>
         <div class="d-flex justify-content-end">
             <a href="/admin/users/create" class="btn btn-primary">Create</a>
         </div>
@@ -18,8 +18,8 @@
             </thead>
             @forelse ($users as $user)
                 <tr>
-                    <th scope="row">{{ $user->id }}</th>
-                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->id }}</td>
+                    <td><a href="/admin/users/{{ $user->id}}" class="link-item">{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at }}</td>
                 </tr>

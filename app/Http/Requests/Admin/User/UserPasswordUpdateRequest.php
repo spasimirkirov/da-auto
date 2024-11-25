@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin\User;
 
 use App\Http\Requests\InternalFormRequest;
 
-class UserUpdateRequest extends InternalFormRequest
+class UserPasswordUpdateRequest extends InternalFormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -13,11 +13,8 @@ class UserUpdateRequest extends InternalFormRequest
      */
     public function rules(): array
     {
-        $id = $this->route('id');
-
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users,email,' . $id . '',
+            'password' => 'required|string|min:6|confirmed',
         ];
     }
 }
