@@ -7,17 +7,13 @@
         </div>
     </x-slot>
 
-    <div class="container card">
-        <div class="pt-2 pt-md-4 w-50 mx-auto">
-            @method('PUT')
-            <div class="mb-3">
-                <label class="form-label" for="name">Name</label>
-                {{ html()->input('text', 'name', $user->name)->class('form-control')->placeholder('Enter user\'s name') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="email">Email address</label>
-                {{ html()->input('email', 'email', $user->email)->class('form-control')->placeholder('Enter user\'s email') }}
-            </div>
-        </div>
+    @method('PUT')
+    <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
+        {{ html()->input('text', 'name', $user->name)->class('form-control')->placeholder('Enter user\'s name') }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="email">Email address</label>
+        {{ html()->input('email', 'email', $user->email)->class('form-control')->placeholder('Enter user\'s email') }}
     </div>
 </x-app-layout>

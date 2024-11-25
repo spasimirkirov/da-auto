@@ -6,26 +6,24 @@
         </div>
     </x-slot>
 
-    <div class="container card pt-2 pt-md-4">
-        <x-datatable :entities="$users">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Created At</th>
-                </tr>
-            </thead>
-            @forelse ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td><a href="/admin/users/{{ $user->id}}" class="link-item">{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->created_at }}</td>
-                </tr>
-            @empty
-                <td colspan="5" class="text-center">No Results</td>
-            @endforelse
-        </x-datatable>
-    </div>
+    <x-datatable :entities="$users">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created At</th>
+            </tr>
+        </thead>
+        @forelse ($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td><a href="/admin/users/{{ $user->id }}" class="link-item">{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->created_at }}</td>
+            </tr>
+        @empty
+            <td colspan="5" class="text-center">No Results</td>
+        @endforelse
+    </x-datatable>
 </x-app-layout>

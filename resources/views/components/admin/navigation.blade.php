@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand Logo -->
         <a class="navbar-brand" href="/admin/dashboard"> Admin Panel </a>
         <!-- Button for toggling the navbar on small screens -->
@@ -32,12 +32,12 @@
             </ul>
             <!-- Dropdown Button for Account -->
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                <button class="btn btn-md btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Account
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="/admin/profile">Profile</a></li>
+                    <li><a @class(['dropdown-item', 'active' => Request::is('admin/profile')]) href="/admin/profile">Profile</a></li>
 
                     <!-- Logout Form -->
                     <li>

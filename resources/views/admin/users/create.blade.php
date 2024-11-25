@@ -7,24 +7,20 @@
         </div>
     </x-slot>
 
-    <div class="container card">
-        <div class="form-group pt-2 pt-md-4 w-50 mx-auto">
-            <div class="mb-3">
-                <label class="form-label" for="name">Name</label>
-                {{ html()->input('text', 'name')->class('form-control')->placeholder('Enter user\'s name') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="email">Email address</label>
-                {{ html()->input('email', 'email')->class('form-control')->placeholder('Enter user\'s email') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
-                {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password Confirmation</label>
-                {{ html()->input('password', 'password_confirmation')->class('form-control')->placeholder('Confirm user\'s password') }}
-            </div>
-        </div>
+    <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
+        {{ html()->input('text', 'name')->class('form-control')->placeholder('Enter user\'s name') }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="email">Email address</label>
+        {{ html()->input('email', 'email')->class('form-control')->placeholder('Enter user\'s email') }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password Confirmation</label>
+        {{ html()->input('password', 'password_confirmation')->class('form-control')->placeholder('Confirm user\'s password') }}
     </div>
 </x-app-layout>

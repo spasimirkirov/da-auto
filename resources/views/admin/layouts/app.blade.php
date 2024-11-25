@@ -33,7 +33,12 @@
                 </div>
             @endisset
             <!-- Page Content -->
-            {{ $slot }}
+
+            <div class="container card">
+                <div class="pt-2 pt-md-4 w-md-50">
+                    {{ $slot }}
+                </div>
+            </div>
 
             @if ($action ?? false)
                 @csrf

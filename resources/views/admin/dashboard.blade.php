@@ -3,7 +3,5 @@
         <h4 class="fs-4 fw-bold"> {{ __('Dashboard') }}</h4>
     </x-slot>
 
-    <div class="container card">
-        TODO
-    </div>
+    TODO
 </x-app-layout>

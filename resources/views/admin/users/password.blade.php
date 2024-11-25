@@ -7,17 +7,13 @@
         </div>
     </x-slot>
 
-    <div class="container card">
-        <div class="form-group pt-2 pt-md-4 w-50 mx-auto">
-            @method('PUT')
-            <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
-                {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password Confirmation</label>
-                {{ html()->input('password', 'password_confirmation')->class('form-control')->placeholder('Confirm user\'s password') }}
-            </div>
-        </div>
+    @method('PUT')
+    <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password Confirmation</label>
+        {{ html()->input('password', 'password_confirmation')->class('form-control')->placeholder('Confirm user\'s password') }}
     </div>
 </x-app-layout>
