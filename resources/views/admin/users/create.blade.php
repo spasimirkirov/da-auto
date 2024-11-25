@@ -10,19 +10,19 @@
     <div class="container card pt-2 pt-md-4 w-50">
         <div class="mb-3">
             <label class="form-label" for="name">Name</label>
-            <input name="name" class="form-control" placeholder="Enter Name"/>
+            {{ html()->input('text', 'name')->class('form-control')->placeholder('Enter user\'s name') }}
         </div>
         <div class="mb-3">
             <label class="form-label" for="email">Email address</label>
-            <input name="email" type="email" class="form-control" placeholder="Enter Email"/>
+            {{ html()->input('email', 'email')->class('form-control')->placeholder('Enter user\'s email') }}
         </div>
         <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input name="password" type="password" class="form-control"/>
+            {{ html()->input('password', 'password')->class('form-control')->placeholder('Enter user\'s password') }}
         </div>
         <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input name="password_confirmation" type="password" class="form-control"/>
+            <label class="form-label" for="password">Password Confirmation</label>
+            {{ html()->input('password', 'password_confirmation')->class('form-control')->placeholder('Confirm user\'s password') }}
         </div>
     </div>
 </x-app-layout>

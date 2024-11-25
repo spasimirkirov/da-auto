@@ -7,7 +7,7 @@
     </x-slot>
 
     <div class="container card pt-2 pt-md-4">
-        <table class="table table-striped">
+        <x-datatable :entities="$users">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -16,20 +16,16 @@
                     <th scope="col">Created At</th>
                 </tr>
             </thead>
-            <tbody>
-                @forelse ($users as $user)
-                    <tr>
-                        <th scope="row">{{ $user->id }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at }}</td>
-                    </tr>
-                @empty
-                    <td colspan="5" class="text-center">No Results</td>
-                @endforelse
-            </tbody>
-        </table>
-
-        {{ $users->links('admin.pagination.bootstrap-5') }}
+            @forelse ($users as $user)
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at }}</td>
+                </tr>
+            @empty
+                <td colspan="5" class="text-center">No Results</td>
+            @endforelse
+        </x-datatable>
     </div>
 </x-app-layout>

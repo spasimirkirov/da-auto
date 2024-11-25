@@ -7,7 +7,7 @@
     </x-slot>
 
     <div class="container card pt-2 pt-md-4">
-        <table class="table table-bordered table-striped">
+        <x-datatable :entities="$cars">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -40,8 +40,6 @@
                     <td colspan="10" class="text-center">No Results</td>
                 @endforelse
             </tbody>
-        </table>
-
-        {{ $cars->links('admin.pagination.bootstrap-5') }}
+        </x-datatable>
     </div>
 </x-app-layout>
