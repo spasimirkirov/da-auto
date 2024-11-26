@@ -65,7 +65,7 @@ class CarController extends Controller
     {
         CarService::storeCar($request->validated());
 
-        return redirect(route('cars.index'));
+        return redirect(route('admin.cars.index'));
     }
 
     /**
@@ -117,7 +117,7 @@ class CarController extends Controller
     {
         CarService::updateCar($id, $request->validated());
 
-        return redirect(route('cars.show', ['id' => $id]));
+        return redirect(route('admin.cars.show', ['id' => $id]));
     }
 
     /**
@@ -133,6 +133,6 @@ class CarController extends Controller
     {
         CarService::deleteCar($id);
 
-        return redirect(route('cars.index'));
+        return redirect(route('admin.cars.index'));
     }
 }

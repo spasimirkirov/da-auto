@@ -54,7 +54,7 @@ class UserController extends Controller
     {
         UserService::storeUser($request->validated());
 
-        return redirect(route('users.index'));
+        return redirect(route('admin.users.index'));
     }
 
     /**
@@ -102,7 +102,7 @@ class UserController extends Controller
     {
         UserService::updateUser($id, $request->validated());
 
-        return redirect(route('users.show', ['id' => $id]));
+        return redirect(route('admin.users.show', ['id' => $id]));
     }
 
     /**
@@ -134,7 +134,7 @@ class UserController extends Controller
     {
         UserService::updateUserPassword($id, $request->password);
 
-        return redirect(route('users.show', ['id' => $id]));
+        return redirect(route('admin.users.show', ['id' => $id]));
     }
 
     /**
@@ -150,6 +150,6 @@ class UserController extends Controller
     {
         UserService::deleteUser($id);
 
-        return redirect(route('users.index'));
+        return redirect(route('admin.users.index'));
     }
 }

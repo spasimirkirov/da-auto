@@ -3,33 +3,34 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Admin\Setting\SettingUpdateRequest;
+use App\Services\SettingService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class SettingsController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): View
     {
-        return 1;
+        return view('admin.settings.index', [
+            'contact_email' => SettingService::getContactEmail(),
+            'contact_phone' => SettingService::getContactPhone(),
+        ]);
     }
 
-    public function create(Request $request)
+    public function edit(Request $request): View
     {
-        return 1;
+        return view('admin.settings.edit', [
+            'contact_email' => SettingService::getContactEmail(),
+            'contact_phone' => SettingService::getContactPhone(),
+        ]);
     }
 
-    public function store(Request $request)
+    public function update(SettingUpdateRequest $request): RedirectResponse
     {
-        return 1;
-    }
+        SettingService::updateSettings($request->validated());
 
-    public function edit(Request $request)
-    {
-        return 1;
-    }
-
-    public function update(FormRequest $request)
-    {
-        return 1;
+        return redirect(route('admin.settings.index'));
     }
 }

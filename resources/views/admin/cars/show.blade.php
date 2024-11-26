@@ -4,6 +4,9 @@
         <div class="d-flex justify-content-end gap-2">
             <a class="btn btn-light border" href="/admin/cars">Back</a>
             <a class="btn btn-primary" href="/admin/cars/{{ $car->id }}/edit">Edit</a>
+            <x-admin.delete-record-modal title="Delete User" action="/admin/cars/{{ $car->id }}">
+                Are you sure you want to delete car "{{ $car->name }}"?
+            </x-admin.delete-record-modal>
         </div>
     </x-slot>
 
