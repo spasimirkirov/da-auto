@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
@@ -47,6 +48,7 @@ class UserService
         $user->name = $input['name'];
         $user->email = $input['email'];
         $user->password = Hash::make($input['password']);
+        $user->created_by = Auth::id();
         $user->save();
     }
 
@@ -59,6 +61,7 @@ class UserService
         $user = User::findOrFail($id);
         $user->name = $input['name'];
         $user->email = $input['email'];
+        $user->updated_by = Auth::id();
         $user->save();
     }
 
@@ -70,6 +73,18 @@ class UserService
     {
         $user =  User::findOrFail($id);
         $user->password = Hash::make($password);
+        $user->updated_by = Auth::id();
         $user->save();
+    }
+
+    /**
+     * @param int $id
+     */
+    public static function deleteUser(int $id)
+    {
+        $user = User::findOrFail($id);
+        $user->updated_by = Auth::id();
+        $user->save();
+        $user->delete();
     }
 }

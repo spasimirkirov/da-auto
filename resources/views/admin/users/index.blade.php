@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-layouts.admin>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Users List</h4>
         <div class="d-flex justify-content-end">
@@ -26,4 +26,4 @@
             <td colspan="5" class="text-center">No Results</td>
         @endforelse
     </x-datatable>
-</x-app-layout>
+</x-layouts.admin>

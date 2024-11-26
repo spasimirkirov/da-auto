@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-layouts.admin>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Cars List</h4>
         <div class="d-flex justify-content-end">
@@ -40,4 +40,4 @@
             @endforelse
         </tbody>
     </x-datatable>
-</x-app-layout>
+</x-layouts.admin>

@@ -6,6 +6,7 @@ use App\Models\Car;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 class CarService
 {
@@ -69,19 +70,20 @@ class CarService
      */
     public static function storeCar(array $input)
     {
-        $user = new Car();
-        $user->name = $input['name'];
-        $user->price = $input['price'];
-        $user->car_brand_id = $input['car_brand_id'];
-        $user->car_color_id = $input['car_color_id'];
-        $user->car_transmission_type_id = $input['car_transmission_type_id'];
-        $user->car_engine_type_id = $input['car_engine_type_id'];
-        $user->year = Carbon::parse($input['year'])->format('Y');
-        $user->mileage = $input['mileage'];
-        $user->description = $input['description'];
-        $user->is_featured = isset($input['is_featured']);
-        $user->is_visible = isset($input['is_visible']);
-        $user->save();
+        $car = new Car();
+        $car->name = $input['name'];
+        $car->price = $input['price'];
+        $car->car_brand_id = $input['car_brand_id'];
+        $car->car_color_id = $input['car_color_id'];
+        $car->car_transmission_type_id = $input['car_transmission_type_id'];
+        $car->car_engine_type_id = $input['car_engine_type_id'];
+        $car->year = Carbon::parse($input['year'])->format('Y');
+        $car->mileage = $input['mileage'];
+        $car->description = $input['description'];
+        $car->is_featured = isset($input['is_featured']);
+        $car->is_visible = isset($input['is_visible']);
+        $car->created_by = Auth::id();
+        $car->save();
     }
 
     /**
@@ -92,18 +94,27 @@ class CarService
      */
     public static function updateCar(int $id, array $input)
     {
-        $user = Car::findOrFail($id);
-        $user->name = $input['name'];
-        $user->price = $input['price'];
-        $user->car_brand_id = $input['car_brand_id'];
-        $user->car_color_id = $input['car_color_id'];
-        $user->car_transmission_type_id = $input['car_transmission_type_id'];
-        $user->car_engine_type_id = $input['car_engine_type_id'];
-        $user->year = Carbon::parse($input['year'])->format('Y');
-        $user->mileage = $input['mileage'];
-        $user->description = $input['description'];
-        $user->is_featured = isset($input['is_featured']);
-        $user->is_visible = isset($input['is_visible']);
-        $user->save();
+        $car = Car::findOrFail($id);
+        $car->name = $input['name'];
+        $car->price = $input['price'];
+        $car->car_brand_id = $input['car_brand_id'];
+        $car->car_color_id = $input['car_color_id'];
+        $car->car_transmission_type_id = $input['car_transmission_type_id'];
+        $car->car_engine_type_id = $input['car_engine_type_id'];
+        $car->year = Carbon::parse($input['year'])->format('Y');
+        $car->mileage = $input['mileage'];
+        $car->description = $input['description'];
+        $car->is_featured = isset($input['is_featured']);
+        $car->is_visible = isset($input['is_visible']);
+        $car->updated_by = Auth::id();
+        $car->save();
+    }
+
+    public static function deleteCar(int $id)
+    {
+        $car = Car::findOrFail($id);
+        $car->updated_by = Auth::id();
+        $car->save();
+        $car->delete();
     }
 }

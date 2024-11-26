@@ -1,4 +1,4 @@
-<x-app-layout action="/admin/users/{{ $user->id }}" method="POST">
+<x-layouts.admin action="/admin/users/{{ $user->id }}" method="POST">
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Edit User - {{ $user->email }}</h4>
         <div class="d-flex justify-content-end gap-2">
@@ -16,4 +16,4 @@
         <label class="form-label" for="email">Email address</label>
         {{ html()->input('email', 'email', $user->email)->class('form-control')->placeholder('Enter user\'s email') }}
     </div>
-</x-app-layout>
+</x-layouts.admin>

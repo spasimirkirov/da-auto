@@ -1,4 +1,4 @@
-<x-app-layout action="/admin/cars" method="POST">
+<x-layouts.admin action="/admin/cars" method="POST">
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Create Car</h4>
         <div class="d-flex justify-content-end gap-2">
@@ -51,4 +51,4 @@
         <label class="form-label" for="description">Car Description</label>
         {{ html()->textarea('description', old('description'))->class('form-control')->placeholder('Enter Car Description') }}
     </div>
-</x-app-layout>
+</x-layouts.admin>

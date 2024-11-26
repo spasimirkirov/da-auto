@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-layouts.admin>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">View Car - {{ $car->name }}</h4>
         <div class="d-flex justify-content-end gap-2">
@@ -51,4 +51,4 @@
         <label class="fs-6 fw-bold" for="description">Car Description:</label>
         <p>{{ $car->description }}</p>
     </div>
-</x-app-layout>
+</x-layouts.admin>
