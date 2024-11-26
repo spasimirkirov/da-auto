@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->softDeletes();
         });
-
-        $this->seedData();
     }
 
     /**
@@ -32,21 +30,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('car_transmission_types');
-    }
-
-    /**
-     * Seed the initial data.
-     */
-    private function seedData()
-    {
-        $transmissions = [
-            ['name' => 'Automatic', 'slug' => 'automatic'],
-            ['name' => 'CVT', 'slug' => 'cvt'],
-            ['name' => 'Dual Clutch', 'slug' => 'dual-clutch'],
-            ['name' => 'Manual', 'slug' => 'manual'],
-            ['name' => 'Semi-Automatic', 'slug' => 'semi-automatic'],
-        ];
-
-        DB::table('car_transmission_types')->insert($transmissions);
     }
 };

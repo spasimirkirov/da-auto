@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->softDeletes();
         });
-
-        $this->seedData();
     }
 
     /**
@@ -32,23 +30,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('car_engine_types');
-    }
-
-    /**
-     * Seed the initial data.
-     */
-    private function seedData()
-    {
-        $engines = [
-            ['name' => 'Diesel', 'slug' => 'diesel'],
-            ['name' => 'Electric', 'slug' => 'electric'],
-            ['name' => 'Gasoline', 'slug' => 'gasoline'],
-            ['name' => 'Hybrid', 'slug' => 'hybrid'],
-            ['name' => 'Hydrogen', 'slug' => 'hydrogen'],
-            ['name' => 'Natural Gas', 'slug' => 'natural-gas'],
-            ['name' => 'Plug-in Hybrid', 'slug' => 'plug-in-hybrid'],
-        ];
-
-        DB::table('car_engine_types')->insert($engines);
     }
 };

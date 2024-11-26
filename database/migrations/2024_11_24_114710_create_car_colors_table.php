@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->softDeletes();
         });
-
-        $this->seedData();
     }
 
     /**
@@ -32,30 +30,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('car_colors');
-    }
-
-    /**
-     * Seed the initial data.
-     */
-    private function seedData()
-    {
-        $colors = [
-            ['name' => 'Black', 'slug' => 'black'],
-            ['name' => 'White', 'slug' => 'white'],
-            ['name' => 'Silver', 'slug' => 'silver'],
-            ['name' => 'Gray', 'slug' => 'gray'],
-            ['name' => 'Red', 'slug' => 'red'],
-            ['name' => 'Blue', 'slug' => 'blue'],
-            ['name' => 'Brown', 'slug' => 'brown'],
-            ['name' => 'Green', 'slug' => 'green'],
-            ['name' => 'Beige', 'slug' => 'beige'],
-            ['name' => 'Yellow', 'slug' => 'yellow'],
-            ['name' => 'Gold', 'slug' => 'gold'],
-            ['name' => 'Orange', 'slug' => 'orange'],
-            ['name' => 'Purple', 'slug' => 'purple'],
-            ['name' => 'Pink', 'slug' => 'pink'],
-        ];
-
-        DB::table('car_colors')->insert($colors);
     }
 };
