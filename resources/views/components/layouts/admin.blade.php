@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} - {{ $pageTitle ?? 'Dashboard' }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - {{ $pageTitle ?? 'Admin Panel' }}</title>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss'])
