@@ -38,14 +38,14 @@ a:focus {
     max-height: 20rem;
 }
 
-.hero-section {
+.home-hero-section {
     background-image: url("/vendor/pixabay/car-1890494_1920.jpg"); /* Replace with your image URL */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Full-screen height */
 }
 
-.hero-section-card {
+.home-hero-section-card {
     background-color: rgba(
         82,
         82,
@@ -53,10 +53,10 @@ a:focus {
         0.664
     ); /* Optional: Adds a dark overlay */
 }
-.hero-section-card h1,
-.hero-section-card small,
-.hero-section-card p,
-.hero-section-card span {
+.home-hero-section-card h1,
+.home-hero-section-card small,
+.home-hero-section-card p,
+.home-hero-section-card span {
     color: #ffffff;
 }
 

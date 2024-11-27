@@ -1,4 +1,4 @@
-<x-layouts.admin action="/admin/cars/{{ $car->id }}" method="POST">
+<x-layouts.admin-layout action="/admin/cars/{{ $car->id }}" method="POST">
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Edit Car - {{ $car->name }}</h4>
         <div class="d-flex justify-content-end gap-2">
@@ -52,4 +52,4 @@
         <label class="form-label" for="description">Car Description</label>
         {{ html()->textarea('description', old('description', $car->description))->class('form-control')->placeholder('Enter Car Description') }}
     </div>
-</x-layouts.admin>
+</x-layouts.admin-layout>

@@ -45,10 +45,10 @@ class CarService
     /**
      * @return LengthAwarePaginator
      */
-    public static function getCarPagination(): LengthAwarePaginator
+    public static function getCarPagination(?int $paginationLength = 25): LengthAwarePaginator
     {
         return self::getCarQuery()
-            ->paginate(25);
+            ->paginate($paginationLength);
     }
 
     /**
@@ -116,5 +116,13 @@ class CarService
         $car->updated_by = Auth::id();
         $car->save();
         $car->delete();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getCarsCount(): int
+    {
+        return Car::count();
     }
 }

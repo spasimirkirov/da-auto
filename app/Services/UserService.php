@@ -87,4 +87,12 @@ class UserService
         $user->save();
         $user->delete();
     }
+
+    /**
+     * @return int
+     */
+    public static function getUsersCount(): int
+    {
+        return User::count();
+    }
 }

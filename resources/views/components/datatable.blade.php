@@ -2,4 +2,4 @@
     {{ $slot }}
 </table>
 
-{{ $entities->links('admin.pagination.bootstrap-5') }}
+{{ $entities->links('pagination.bootstrap-5') }}

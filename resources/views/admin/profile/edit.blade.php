@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin-layout>
     <div class="container p-2 p-md-5">
         @include('admin.profile.partials.update-profile-information-form')
     </div>
@@ -6,4 +6,4 @@
     <div class="container p-2 p-md-5">
         @include('admin.profile.partials.update-password-form')
     </div>
-</x-layouts.admin>
+</x-layouts.admin-layout>

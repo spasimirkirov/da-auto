@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin-layout>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">View User - {{ $user->email }}</h4>
         <div class="d-flex justify-content-end gap-2">
@@ -19,4 +19,4 @@
         <label class="fs-6 fw-bold">Email address</label>
         <span>{{ $user->email }}</span>
     </div>
-</x-layouts.admin>
+</x-layouts.admin-layout>

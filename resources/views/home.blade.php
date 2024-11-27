@@ -1,18 +1,24 @@
-<x-layouts.app>
+<x-layouts.app-layout>
     <x-slot:pageTitle>Home</x-slot>
 
     <x-slot:heroSection>
-        <div class="card hero-section-card p-5">
-            <div class="d-flex flex-column gap-2">
-                <h1 class="text-center">Get your desired car in resonable price</h1>
-                <p class="text-center fs-6 fw-bold">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.</p>
+        <section id="home-hero-section" class="hero-section py-2 py-lg-5">
+            <div class="container fade-in-y">
+                <div class="card hero-section-card p-5">
+                    <div class="d-flex flex-column gap-2">
+                        <h1 class="text-center">Get your desired car in resonable price</h1>
+                        <p class="text-center fs-6 fw-bold">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut labore
+                            et dolore magna aliqua.</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary fw-bold" onclick="window.location.href='/contact-us'">Contact
+                            Us</button>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-primary fw-bold" onclick="window.location.href='/contact-us'">Contact Us</button>
-            </div>
-        </div>
+        </section>
     </x-slot:heroSection>
 
     <div id="our-services" class="py-2 py-lg-5  fade-in-y">
@@ -33,10 +39,14 @@
 
     <div id="new-cars" class="bg-dark py-2 py-lg-5 fade-in-y">
         <x-sections.new-cars.section-container :itemsCount="count($newCars)">
+            <x-slot:title>
+                <h2 class="text-light">New Cars</h2>
+            </x-slot>
             @foreach ($newCars as $i => $newCar)
                 <x-sections.new-cars.section-item :idx="$i" href="{{ '/car/' . $newCar['id'] }}"
                     :carName="$newCar['name']" :carModel="$newCar['model']" :carImagePath="$newCar['image_path']">
-                    {{ $newCar['description'] ?? '' }}
+                    <h2><a href="{{ $newCar['description'] }}" class="text-light">{{ $newCar['name'] }}</a></h2>
+                    <p class="text-light">{{ $newCar['description'] ?? '' }}</p>
                 </x-sections.new-cars.section-item>
             @endforeach
         </x-sections.new-cars.section-container>
@@ -79,4 +89,4 @@
             </div>
         </x-sections.brands.section-container>
     </section>
-</x-layouts.app>
+</x-layouts.app-layout>

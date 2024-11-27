@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name') }} - {{ $pageTitle }}</title>
+    <title>{{ $siteName }} - {{ $pageTitle }}</title>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -24,9 +24,12 @@
             <x-navigation.navigation-item href="/" title="Home" :isActive="Request::is('/')">
                 Home
             </x-navigation.navigation-item>
-            {{-- <x-navigation.navigation-item href="/featured-cars" title="Featured Cars" :isActive="Request::is('featured-cars')">
-                Featured Cars
-            </x-navigation.navigation-item> --}}
+
+            @if ($carsCount > 0)
+                <x-navigation.navigation-item href="/online-catalogue" title="Online Catalogue" :isActive="Request::is('online-catalogue')">
+                    Online Catalogue
+                </x-navigation.navigation-item>
+            @endif
             <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('contact-us')">
                 Contact Us
             </x-navigation.navigation-item>
@@ -34,12 +37,8 @@
     </navigation>
 
     <!--hero-section start -->
-    @if ($heroSection)
-        <section id="hero-section" class="hero-section py-2 py-lg-5">
-            <div class="container fade-in-y">
-                {{ $heroSection }}
-            </div>
-        </section>
+    @if ($heroSection ?? false)
+        {{ $heroSection }}
     @endif
 
     <section id="main">
@@ -54,7 +53,7 @@
                     <div class="single-footer-widget">
                         <div class="footer-logo">
                             <a href="/" class="text-white">
-                                <h6>{{ config('app.name') }}</h6>
+                                <h6>{{ $siteName }}</h6>
                             </a>
                         </div>
                         <p>Ased do eiusm tempor incidi ut labore et dolore magnaian aliqua. Ut enim ad minim veniam.</p>
@@ -83,7 +82,7 @@
                         <h6>Navigation</h6>
                         <ul class="list-unstyled">
                             <li><a href="./" class="fw-bold">Home</a></li>
-                            {{-- <li><a href="./featured-cars">Featured Cars</a></li> --}}
+                            <li><a href="./featured-cars">Featured Cars</a></li>
                             <li><a href="./contact-us" class="fw-bold">Contact Us</a></li>
                         </ul>
                     </div>

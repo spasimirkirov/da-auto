@@ -3,7 +3,7 @@
      <div class="container">
          <!-- Brand Logo -->
          <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-             {{ config('app.name') }}
+             {{ $siteName }}
          </a>
 
          <!-- Toggler -->

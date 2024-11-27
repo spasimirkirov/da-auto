@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Services\DashboardService;
+use App\Services\CarService;
 use App\Services\SettingService;
+use App\Services\UserService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -35,8 +36,8 @@ class DashboardController extends Controller
     public function dashboard(Request $request): View
     {
         return view('admin.dashboard', [
-            'usersCount' => DashboardService::getUsersCount(),
-            'carsCount' => DashboardService::getCarsCount(),
+            'usersCount' => UserService::getUsersCount(),
+            'carsCount' => CarService::getCarsCount(),
             'contactEmail' => SettingService::getContactEmail(),
             'contactPhone' => SettingService::getContactPhone(),
         ]);

@@ -1,4 +1,4 @@
-<x-layouts.guest>
+<x-layouts.guest-layout>
     <!-- Session Status -->
     <x-admin.auth-session-status class="mb-4" :status="session('status')" />
 
@@ -39,4 +39,4 @@
             </div>
         </div>
     </form>
-</x-layouts.guest>
+</x-layouts.guest-layout>

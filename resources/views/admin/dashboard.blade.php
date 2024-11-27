@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin-layout>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Dashboard</h4>
     </x-slot>
@@ -22,4 +22,4 @@
         <label class="fs-6 fw-bold">Contact Phone</label>
         <span>{{ $contactEmail ?? 'N/A' }}</span>
     </div>
-</x-layouts.admin>
+</x-layouts.admin-layout>

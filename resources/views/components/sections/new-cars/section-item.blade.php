@@ -4,7 +4,6 @@
             <img src="{{ $carImagePath ?? '' }}" class="carousel-image" alt="newest car" />
         </div>
 
-        <h2><a href="{{ $href }}" class="text-light">{{ $carName }}</a></h2>
         <p>{{ $slot }} </p>
 
         <div class="d-block">
