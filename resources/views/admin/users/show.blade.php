@@ -19,5 +19,4 @@
         <label class="fs-6 fw-bold">Email address</label>
         <span>{{ $user->email }}</span>
     </div>
-
 </x-layouts.admin>
