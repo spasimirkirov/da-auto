@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Services\DashboardService;
 use App\Services\SettingService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -18,7 +19,20 @@ class DashboardController extends Controller
      * @method GET
      * @endpoint /
      */
-    public function index(Request $request): View
+    public function index(Request $request): RedirectResponse
+    {
+        return redirect(route('admin.dashboard'));
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return View
+     *
+     * @method GET
+     * @endpoint /dashboard
+     */
+    public function dashboard(Request $request): View
     {
         return view('admin.dashboard', [
             'usersCount' => DashboardService::getUsersCount(),

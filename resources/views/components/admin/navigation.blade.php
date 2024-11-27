@@ -36,8 +36,9 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Account
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <ul class="dropdown-menu dropdown-menu-end gap-3" aria-labelledby="dropdownMenuButton">
                     <li><a @class(['dropdown-item', 'active' => Request::is('admin/profile')]) href="/admin/profile">Profile</a></li>
+                    <li><a class="dropdown-item" href="/">Back to website</a></li>
 
                     <!-- Logout Form -->
                     <li>
