@@ -1,4 +1,6 @@
-<x-layouts.admin-layout>
+@props(['action', 'method'])
+
+<x-layouts.admin-layout action="{{ $action ?? null }}" method="{{ $method ?? null }}">
     <x-slot:header>
         {{ $header }}
     </x-slot>
