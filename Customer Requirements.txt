@@ -2,3 +2,8 @@ Application Name: "DA AUTO"
 Website Language: English
 Contact Email: alexanderdermenzhi@gmail.com
 Theme: https://www.free-css.com/free-css-templates/page296/carvilla
+
+
+Car Object:
+Remove price
+Add to car-pagination-items Manufacture Year,

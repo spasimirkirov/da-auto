@@ -2,7 +2,7 @@
     <x-slot:header>
         <h4 class="fs-4 fw-bold">Edit Car - {{ $car->name }}</h4>
         <div class="d-flex justify-content-end gap-2">
-            <a class="btn btn-danger" href="/admin/cars/{{ $car->id }}">Cancel</a>
+            <a class="btn btn-danger" href="/admin/cars/{{ $car->id }}/details">Cancel</a>
             <button class="btn btn-success" type="submit">Save</button>
         </div>
     </x-slot>

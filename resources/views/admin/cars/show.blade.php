@@ -1,9 +1,9 @@
-<x-layouts.admin-layout>
+<x-layouts.admin.car-layout>
     <x-slot:header>
         <h4 class="fs-4 fw-bold">View Car - {{ $car->name }}</h4>
         <div class="d-flex justify-content-end gap-2">
-            <a class="btn btn-light border" href="/admin/cars">Back</a>
-            <a class="btn btn-primary" href="/admin/cars/{{ $car->id }}/edit">Edit</a>
+            <a class="btn btn-light border" href="/admin/cars">Back to Cars</a>
+            <a class="btn btn-primary" href="/admin/cars/{{ $car->id }}/details/edit">Edit Details</a>
             <x-admin.delete-record-modal title="Delete User" action="/admin/cars/{{ $car->id }}">
                 Are you sure you want to delete car "{{ $car->name }}"?
             </x-admin.delete-record-modal>
@@ -54,4 +54,4 @@
         <label class="fs-6 fw-bold" for="description">Car Description:</label>
         <p>{{ $car->description }}</p>
     </div>
-</x-layouts.admin-layout>
+    </x-layouts.admin-layout>

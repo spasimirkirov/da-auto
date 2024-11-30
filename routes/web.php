@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ContactUsController;
-use App\Http\Controllers\FeaturedCarsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OnlineCatalogueController;
 use App\Http\Controllers\ProfileController;
@@ -33,13 +32,19 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::put('/users/{id}/password', [UserController::class, 'updatePassword'])->name('admin.users.updatePassword');
 
     // Cars
+    Route::redirect('/cars/{id}', '/admin/cars/{id}/details', 302);
+
     Route::get('/cars', [CarController::class, 'index'])->name('admin.cars.index');
     Route::get('/cars/create', [CarController::class, 'create'])->name('admin.cars.create');
     Route::post('/cars', [CarController::class, 'store'])->name('admin.cars.store');
-    Route::get('/cars/{id}', [CarController::class, 'show'])->name('admin.cars.show');
-    Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('admin.cars.edit');
+    Route::get('/cars/{id}/details', [CarController::class, 'show'])->name('admin.cars.show');
+    Route::get('/cars/{id}/details/edit', [CarController::class, 'edit'])->name('admin.cars.edit');
+    Route::get('/cars/{id}/images', [CarController::class, 'images'])->name('admin.cars.images');
     Route::put('/cars/{id}', [CarController::class, 'update'])->name('admin.cars.update');
     Route::delete('/cars/{id}', [CarController::class, 'delete'])->name('admin.cars.delete');
+
+    Route::post('/cars/{id}/upload', [CarController::class, 'handleUpload'])->name('admin.cars.handleUpload');
+    Route::delete('/cars/{id}/removeImage/{imageId}', [CarController::class, 'handleRemove'])->name('admin.cars.handleRemove');
 
     // Settings
     Route::get('/settings', [SettingsController::class, 'index'])->name('admin.settings.index');

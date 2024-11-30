@@ -13,6 +13,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss'])
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "5000",
+        };
+    </script>
 </head>
 
 <body>
@@ -34,7 +42,17 @@
             @endisset
             <!-- Page Content -->
 
-            <div class="container card">
+            @isset($tabs)
+                <ul class="nav nav-tabs">
+                    {{ $tabs }}
+                </ul>
+            @endisset
+
+            <div @class([
+                'container border',
+                'border-top-0' => isset($tabs),
+                'border-top' => !isset($tabs),
+            ])>
                 <div class="py-2 py-md-4 w-md-50">
                     {{ $slot }}
                 </div>

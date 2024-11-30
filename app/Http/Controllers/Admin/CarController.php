@@ -4,16 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Car\CarDeleteRequest;
+use App\Http\Requests\Admin\Car\CarImageUploadRequest;
 use App\Http\Requests\Admin\Car\CarStoreRequest;
 use App\Http\Requests\Admin\Car\CarUpdateRequest;
 use App\Models\CarBrand;
 use App\Models\CarColor;
 use App\Models\CarEngineType;
+use App\Models\CarImage;
 use App\Models\CarTransmissionType;
 use App\Services\CarService;
+use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -75,11 +79,27 @@ class CarController extends Controller
      * @return View
      *
      * @method GET
-     * @endpoint /admin/cars/{id}
+     * @endpoint /admin/cars/{id}/details
      */
     public function show(Request $request, int $id): View
     {
         return view('admin.cars.show', [
+            'car' => CarService::getCarData($id)
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param int $id
+     *
+     * @return View
+     *
+     * @method GET
+     * @endpoint /admin/cars/{id}/images
+     */
+    public function images(Request $request, int $id): View
+    {
+        return view('admin.cars.images', [
             'car' => CarService::getCarData($id)
         ]);
     }
@@ -118,6 +138,51 @@ class CarController extends Controller
         CarService::updateCar($id, $request->validated());
 
         return redirect(route('admin.cars.show', ['id' => $id]));
+    }
+
+    /**
+     * @param CarImageUploadRequest $request
+     * @param int $id
+     *
+     * @return RedirectResponse
+     */
+    public function handleUpload(CarImageUploadRequest $request, int $id): RedirectResponse
+    {
+        // Store the image
+        $image = $request->file('uploadedFile');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $imagePath = $image->storeAs('images/cars', $imageName, 'public');
+
+        // Save to database
+        CarImage::create([
+            'car_id' => $id,
+            'image_name' => $imageName,
+            'image_path' => $imagePath,
+        ]);
+
+        return redirect(route('admin.cars.images', ['id' => $id]));
+    }
+
+    /**
+     * @param Request $request
+     * @param int $id
+     * @param int $imageId
+     *
+     * @return RedirectResponse
+     */
+    public function handleRemove(Request $request, int $id, int $imageId): RedirectResponse
+    {
+        $carImage = CarImage::findOrFail($imageId);
+
+        if (Storage::disk('public')->exists($carImage->image_path)) {
+            Storage::disk('public')->delete($carImage->image_path);
+        } else {
+            throw new Exception('File doesn\'t exist');
+        }
+
+        $carImage->delete();
+
+        return redirect(route('admin.cars.images', ['id' => $id]));
     }
 
     /**

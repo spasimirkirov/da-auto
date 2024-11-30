@@ -11,6 +11,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "5000",
+        };
+    </script>
 
     {{-- <link rel="shortcut icon" type="image/icon" href="/vendor/carvilla-v1.0/assets/logo/favicon.png" /> --}}
 </head>
@@ -30,9 +38,16 @@
                     Online Catalogue
                 </x-navigation.navigation-item>
             @endif
+
             <x-navigation.navigation-item href="/contact-us" title="Contact Us" :isActive="Request::is('contact-us')">
                 Contact Us
             </x-navigation.navigation-item>
+
+            @if ($isLogged)
+                <x-navigation.navigation-item href="/admin/dashboard" title="Admin Panel">
+                    Admin Panel
+                </x-navigation.navigation-item>
+            @endif
         </x-navigation.navigation-container>
     </navigation>
 
