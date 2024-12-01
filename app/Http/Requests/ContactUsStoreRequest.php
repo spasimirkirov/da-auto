@@ -2,4 +2,4 @@
 
 namespace App\Http\Requests;
 
-class HomeIndexRequest extends InternalFormRequest {}
+class ContactUsStoreRequest extends InternalFormRequest {}
